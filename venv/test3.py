@@ -1,20 +1,21 @@
 def main():
-    num_entry = int(input("please input the number of people"))
-    name_li = []
-    age_li = []
-    for i in range(num_entry):
-        name_li.append(input("Enter name "+str(i)))
-        age_li.append(int(input("Enter age " + str(i))))
-    sort_li = sort(name_li,age_li)
-    print(str(name_li[sort_li]) +" "+ str(age_li[sort_li]))
+    """
+    CP1404/CP5632 Practical
+    State names in a dictionary
+    File needs reformatting
+    """
 
-def sort(name_li, age_li):
-    max_age = 0
-    max_age_index = 0
-    for i in range(len(age_li)):
-        if max_age < age_li[i]:
-            max_age = age_li[i]
-            max_age_index = i
-    return max_age_index
+    # TODO: Reformat this file so the dictionary code follows PEP 8 convention
+    STATE_NAMES = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Territory", "WA": "Western Australia",
+                   "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania"}
+    # print(STATE_NAMES)
+
+    state = str(input("Enter short state: ")).upper()
+    while state != "":
+        if state in STATE_NAMES:
+            print(state, "is", STATE_NAMES[state])
+        else:
+            print("Invalid short state")
+        state = str(input("Enter short state: ")).upper()
 
 main()
